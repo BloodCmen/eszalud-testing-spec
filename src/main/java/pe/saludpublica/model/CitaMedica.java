@@ -15,6 +15,9 @@ public class CitaMedica {
         if (patientId == null) {
             throw new IllegalArgumentException("El identificador del paciente es obligatorio");
         }
+        if (doctorId == null) {
+            throw new IllegalArgumentException("El identificador del doctor es obligatorio");
+        }
         this.patientId = patientId;
         this.doctorId = doctorId;
         this.specialtyId = specialtyId;
