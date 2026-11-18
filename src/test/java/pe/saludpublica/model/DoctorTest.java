@@ -27,7 +27,7 @@ class DoctorTest {
 
 
     @Test
-    @DisplayName("DOC-002: Rechazar doctor con documento nulo")
+    @DisplayName("DOC-002 | Rechazar doctor con documento nulo")
     void debeRechazarDocumentoNulo() {
 
         assertThrows(
@@ -41,5 +41,22 @@ class DoctorTest {
                 )
         );
     }
+
+
+    @Test
+    @DisplayName("DOC-003  | Rechazar doctor con nombres nulos")
+    void debeRechazarNombresNulos() {
+
+        assertThrows(IllegalArgumentException.class, () ->
+                new Doctor(
+                        "45678912",
+                        null,
+                        "Salazar Mendoza",
+                        "CMP 085432",
+                        "6af71da3501cca046a166045"
+                )
+        );
+    }
+
 
 }
