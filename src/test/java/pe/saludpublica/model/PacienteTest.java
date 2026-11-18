@@ -78,4 +78,23 @@ public class PacienteTest {
         );
     }
 
+
+    @Test
+    @DisplayName("PAC-005 | Verificar todos los atributos del paciente")
+    void shouldReturnAllPatientAttributes() {
+
+        Paciente paciente = new Paciente(
+                "87654321",
+                "Carlos",
+                "Ramírez",
+                "912345678",
+                "carlos@mail.com"
+        );
+
+        assertEquals("87654321", paciente.getDocumento());
+        assertEquals("Carlos", paciente.getNombres());
+        assertEquals("Ramírez", paciente.getApellidos());
+        assertEquals("912345678", paciente.getTelefono());
+        assertEquals("carlos@mail.com", paciente.getCorreo());
+    }
 }
