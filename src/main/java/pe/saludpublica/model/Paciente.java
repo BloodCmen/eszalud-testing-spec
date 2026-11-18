@@ -1,7 +1,7 @@
+
 package pe.saludpublica.model;
 
-
-/** Modelo de paciente. Comportamiento pendiente de implementar mediante TDD. */
+/** Modelo de paciente. */
 public class Paciente {
 
     private String documento;
@@ -12,7 +12,12 @@ public class Paciente {
 
     public Paciente(String documento, String nombres, String apellidos,
                     String telefono, String correo) {
-        // La asignación de atributos se implementará durante GREEN.
+
+        this.documento = documento;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.telefono = telefono;
+        this.correo = correo;
     }
 
     public String getDocumento() {
