@@ -11,7 +11,9 @@ public class Doctor {
 
     public Doctor(String documento, String nombres, String apellidos,
                   String colegiatura, String specialtyId) {
-
+        if (documento == null) {
+            throw new IllegalArgumentException("El documento es obligatorio");
+        }
         this.documento = documento;
         this.nombres = nombres;
         this.apellidos = apellidos;
