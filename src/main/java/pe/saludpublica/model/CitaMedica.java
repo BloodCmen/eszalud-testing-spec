@@ -11,6 +11,12 @@ public class CitaMedica {
 
     public CitaMedica(String patientId, String doctorId, String specialtyId,
                       String fechaHora, String motivo, String estado) {
+        this.patientId = patientId;
+        this.doctorId = doctorId;
+        this.specialtyId = specialtyId;
+        this.fechaHora = fechaHora;
+        this.motivo = motivo;
+        this.estado = estado;
 
     }
 
