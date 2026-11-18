@@ -27,4 +27,21 @@ class CitaMedicaTest {
         assertEquals("Dolor abdominal", cita.getMotivo());
         assertEquals("PROGRAMADA", cita.getEstado());
     }
+
+    @Test
+    @DisplayName("CIT-002 | Rechazar cita sin identificador de paciente")
+    void debeRechazarPatientIdNulo() {
+
+        assertThrows(IllegalArgumentException.class, () ->
+                new CitaMedica(
+                        null,
+                        "6af7271e501cca046a16604f",
+                        "6af71da3501cca046a166045",
+                        "2026-11-23 16:30",
+                        "Dolor abdominal",
+                        "PROGRAMADA"
+                )
+        );
+    }
+
 }
