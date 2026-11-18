@@ -76,4 +76,20 @@ class CitaMedicaTest {
         );
     }
 
+    @Test
+    @DisplayName("CIT-005: Rechazar cita sin fecha y hora")
+    void debeRechazarFechaHoraNula() {
+
+        assertThrows(IllegalArgumentException.class, () ->
+                new CitaMedica(
+                        "6af71e0b501cca046a166049",
+                        "6af7271e501cca046a16604f",
+                        "6af71da3501cca046a166045",
+                        null,
+                        "Dolor abdominal",
+                        "PROGRAMADA"
+                )
+        );
+    }
+
 }
