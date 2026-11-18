@@ -91,4 +91,24 @@ class DoctorTest {
     }
 
 
+    @Test
+    @DisplayName("DOC-006: Verificar todos los atributos del doctor")
+    void debeVerificarTodosLosAtributosDelDoctor() {
+
+        Doctor doctor = new Doctor(
+                "72345681",
+                "Patricia Elena",
+                "Vargas Ríos",
+                "CMP 092718",
+                "6af71da3501cca046a166046"
+        );
+
+        assertEquals("72345681", doctor.getDocumento());
+        assertEquals("Patricia Elena", doctor.getNombres());
+        assertEquals("Vargas Ríos", doctor.getApellidos());
+        assertEquals("CMP 092718", doctor.getColegiatura());
+        assertEquals("6af71da3501cca046a166046", doctor.getSpecialtyId());
+    }
+
+
 }
