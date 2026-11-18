@@ -107,4 +107,20 @@ class CitaMedicaTest {
                 )
         );
     }
+
+    @Test
+    @DisplayName("CIT-007 | Conservar correctamente un estado válido")
+    void debeConservarEstadoValido() {
+
+        CitaMedica cita = new CitaMedica(
+                "6af71e0b501cca046a166049",
+                "6af7271e501cca046a16604f",
+                "6af71da3501cca046a166045",
+                "2026-11-23 16:30",
+                "Dolor abdominal",
+                "ATENDIDA"
+        );
+
+        assertEquals("ATENDIDA", cita.getEstado());
+    }
 }
