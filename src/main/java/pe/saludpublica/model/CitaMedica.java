@@ -1,0 +1,40 @@
+package pe.saludpublica.model;
+
+public class CitaMedica {
+
+    private String patientId;
+    private String doctorId;
+    private String specialtyId;
+    private String fechaHora;
+    private String motivo;
+    private String estado;
+
+    public CitaMedica(String patientId, String doctorId, String specialtyId,
+                      String fechaHora, String motivo, String estado) {
+
+    }
+
+    public String getPatientId() {
+        return patientId;
+    }
+
+    public String getDoctorId() {
+        return doctorId;
+    }
+
+    public String getSpecialtyId() {
+        return specialtyId;
+    }
+
+    public String getFechaHora() {
+        return fechaHora;
+    }
+
+    public String getMotivo() {
+        return motivo;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+}
