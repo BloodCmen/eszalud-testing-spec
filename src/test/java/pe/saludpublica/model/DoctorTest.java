@@ -59,4 +59,20 @@ class DoctorTest {
     }
 
 
+    @Test
+    @DisplayName("DOC-004 | Rechazar doctor con apellidos nulos")
+    void debeRechazarApellidosNulos() {
+
+        assertThrows(IllegalArgumentException.class, () ->
+                new Doctor(
+                        "45678912",
+                        "Roberto Enrique",
+                        null,
+                        "CMP 085432",
+                        "6af71da3501cca046a166045"
+                )
+        );
+    }
+
+
 }
