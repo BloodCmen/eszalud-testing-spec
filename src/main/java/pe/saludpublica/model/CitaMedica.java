@@ -12,28 +12,24 @@ public class CitaMedica {
     public CitaMedica(String patientId, String doctorId, String specialtyId,
                       String fechaHora, String motivo, String estado) {
 
-        if (patientId == null) {
-            throw new IllegalArgumentException("El identificador del paciente es obligatorio");
-        }
-        if (doctorId == null) {
-            throw new IllegalArgumentException("El identificador del doctor es obligatorio");
-        }
-        if (specialtyId == null) {
-            throw new IllegalArgumentException("El identificador de la especialidad es obligatorio");
-        }
-        if (fechaHora == null) {
-            throw new IllegalArgumentException("La fecha y hora son obligatorias");
-        }
-        if (estado == null) {
-            throw new IllegalArgumentException("El estado es obligatorio");
-        }
+        validarCampo(patientId, "El identificador del paciente");
+        validarCampo(doctorId, "El identificador del doctor");
+        validarCampo(specialtyId, "El identificador de la especialidad");
+        validarCampo(fechaHora, "La fecha y hora");
+        validarCampo(estado, "El estado");
+
         this.patientId = patientId;
         this.doctorId = doctorId;
         this.specialtyId = specialtyId;
         this.fechaHora = fechaHora;
         this.motivo = motivo;
         this.estado = estado;
+    }
 
+    private void validarCampo(String valor, String campo) {
+        if (valor == null) {
+            throw new IllegalArgumentException(campo + " es obligatorio");
+        }
     }
 
     public String getPatientId() {
