@@ -11,6 +11,12 @@ public class Doctor {
 
     public Doctor(String documento, String nombres, String apellidos,
                   String colegiatura, String specialtyId) {
+
+        this.documento = documento;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.colegiatura = colegiatura;
+        this.specialtyId = specialtyId;
     }
 
     public String getDocumento() {
