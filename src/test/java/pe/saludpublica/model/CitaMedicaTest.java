@@ -77,7 +77,7 @@ class CitaMedicaTest {
     }
 
     @Test
-    @DisplayName("CIT-005: Rechazar cita sin fecha y hora")
+    @DisplayName("CIT-005 | Rechazar cita sin fecha y hora")
     void debeRechazarFechaHoraNula() {
 
         assertThrows(IllegalArgumentException.class, () ->
@@ -92,4 +92,19 @@ class CitaMedicaTest {
         );
     }
 
+    @Test
+    @DisplayName("CIT-006 | Rechazar cita con estado nulo")
+    void debeRechazarEstadoNulo() {
+
+        assertThrows(IllegalArgumentException.class, () ->
+                new CitaMedica(
+                        "6af71e0b501cca046a166049",
+                        "6af7271e501cca046a16604f",
+                        "6af71da3501cca046a166045",
+                        "2026-11-23 16:30",
+                        "Dolor abdominal",
+                        null
+                )
+        );
+    }
 }
