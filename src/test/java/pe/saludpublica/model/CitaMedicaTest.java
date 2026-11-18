@@ -44,4 +44,20 @@ class CitaMedicaTest {
         );
     }
 
+    @Test
+    @DisplayName("CIT-003 | Rechazar cita sin identificador de doctor")
+    void debeRechazarDoctorIdNulo() {
+
+        assertThrows(IllegalArgumentException.class, () ->
+                new CitaMedica(
+                        "6af71e0b501cca046a166049",
+                        null,
+                        "6af71da3501cca046a166045",
+                        "2026-11-23 16:30",
+                        "Dolor abdominal",
+                        "PROGRAMADA"
+                )
+        );
+    }
+
 }
