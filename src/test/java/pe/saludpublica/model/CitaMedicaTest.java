@@ -123,4 +123,25 @@ class CitaMedicaTest {
 
         assertEquals("ATENDIDA", cita.getEstado());
     }
+
+    @Test
+    @DisplayName("CIT-008: Verificar atributos después de construir el objeto")
+    void debeVerificarTodosLosAtributos() {
+
+        CitaMedica cita = new CitaMedica(
+                "6af71e0b501cca046a166049",
+                "6af7271e501cca046a16604f",
+                "6af71da3501cca046a166045",
+                "2026-11-23 16:30",
+                "Dolor abdominal",
+                "PROGRAMADA"
+        );
+
+        assertEquals("6af71e0b501cca046a166049", cita.getPatientId());
+        assertEquals("6af7271e501cca046a16604f", cita.getDoctorId());
+        assertEquals("6af71da3501cca046a166045", cita.getSpecialtyId());
+        assertEquals("2026-11-23 16:30", cita.getFechaHora());
+        assertEquals("Dolor abdominal", cita.getMotivo());
+        assertEquals("PROGRAMADA", cita.getEstado());
+    }
 }
