@@ -1,6 +1,5 @@
 package pe.saludpublica.model;
 
-
 public class Doctor {
 
     private String documento;
@@ -11,23 +10,23 @@ public class Doctor {
 
     public Doctor(String documento, String nombres, String apellidos,
                   String colegiatura, String specialtyId) {
-        if (documento == null) {
-            throw new IllegalArgumentException("El documento es obligatorio");
-        }
-        if (nombres == null) {
-            throw new IllegalArgumentException("Los nombres son obligatorios");
-        }
-        if (apellidos == null) {
-            throw new IllegalArgumentException("Los apellidos son obligatorios");
-        }
-        if (colegiatura == null) {
-            throw new IllegalArgumentException("La colegiatura es obligatoria");
-        }
+
+        validarCampo(documento, "El documento");
+        validarCampo(nombres, "Los nombres");
+        validarCampo(apellidos, "Los apellidos");
+        validarCampo(colegiatura, "La colegiatura");
+
         this.documento = documento;
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.colegiatura = colegiatura;
         this.specialtyId = specialtyId;
+    }
+
+    private void validarCampo(String valor, String campo) {
+        if (valor == null) {
+            throw new IllegalArgumentException(campo + " es obligatorio");
+        }
     }
 
     public String getDocumento() {
@@ -50,4 +49,3 @@ public class Doctor {
         return specialtyId;
     }
 }
-
