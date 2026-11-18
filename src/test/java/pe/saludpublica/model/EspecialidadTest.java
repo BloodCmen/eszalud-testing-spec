@@ -33,4 +33,17 @@ class EspecialidadTest {
         );
     }
 
+    @Test
+    @DisplayName("ESP-003 | Verificar atributos después de la construcción")
+    void debeVerificarTodosLosAtributos() {
+
+        Especialidad especialidad = new Especialidad(
+                "Cardiología",
+                "Salud cardiovascular"
+        );
+
+        assertEquals("Cardiología", especialidad.getNombre());
+        assertEquals("Salud cardiovascular", especialidad.getDescripcion());
+    }
+
 }
