@@ -5,10 +5,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class PacientetTest {
+public class PacienteTest {
 
     @Test
-    @DisplayName("Crear un paciente con datos válidos")
+    @DisplayName("PAC-001 | Crear un paciente con datos válidos")
     void shouldCreatePatientWithValidData() {
 
         Paciente paciente = new Paciente(
